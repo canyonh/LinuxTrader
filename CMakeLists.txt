@@ -3,8 +3,8 @@
 # @todo address sanitizer
 # @todo 3rd party library
 # @todo different targets
-
 cmake_minimum_required(VERSION 3.10)
+include (${CMAKE_BINARY_DIR}/conan_toolchain.cmake)
 
 project(LinuxTrader)
 

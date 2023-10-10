@@ -1,5 +1,8 @@
 
-int main(int argc, const char* argvp[])
+#include <benchmark/benchmark.h>
+
+int main(int argc, char* argv[])
 {
+    ::benchmark::Initialize(&argc, argv);
     return 0;
 }

@@ -12,6 +12,7 @@ set -e
 
 # this works
 BUILD_ROOT="build"
+mkdir -p ${BUILD_ROOT}
 REQUESTED_BUILD_TYPE=${1-"debug"}
 echo req: $REQUESTED_BUILD_TYPE
 
@@ -42,6 +43,11 @@ pushd .
 cd ${BUILD_ROOT}
 
 conan install .. --output-folder=${CMAKE_BUILD_TYPE} --build=missing --profile=../${CONAN_PROFILE_PATH}
-(cd ${CMAKE_BUILD_TYPE} && cmake ../.. -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE} && make -j`nproc`)
-
+(cd ${CMAKE_BUILD_TYPE} && cmake ../.. -DCMAKE_EXPORT_COMPILE_COMMANDS=on -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE} && make -j`nproc`)
 popd
+
+ln -sf ${BUILD_ROOT}/${CMAKE_BUILD_TYPE}/compile_commands.json
+
+# link test data
+# @todo download automatically and setup
+(cd $BUILD_ROOT/$CMAKE_BUILD_TYPE && ln -sf ../../data)

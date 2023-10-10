@@ -1,8 +1,18 @@
 
+#include <cstdint>
 #include <benchmark/benchmark.h>
 
-int main(int argc, char* argv[])
+
+static void Test(benchmark::State& state)
 {
-    ::benchmark::Initialize(&argc, argv);
-    return 0;
+    uint64_t val = 0;
+    for(size_t i = 0; i < 10000; ++i)
+    {
+        val++;
+    }
+    return;
 }
+
+BENCHMARK(Test);
+BENCHMARK_MAIN();
+

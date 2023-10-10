@@ -9,3 +9,6 @@ add_executable(unit_test
 )
 
 target_link_libraries(unit_test PRIVATE GTest::GTest)
+set_target_properties(unit_test PROPERTIES 
+    RUNTIME_OUTPUT_DIRECTORY ${BIN_DIR}
+)

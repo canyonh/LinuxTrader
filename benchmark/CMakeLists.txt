@@ -8,3 +8,6 @@ add_executable(benchmark
 )
 
 target_link_libraries(benchmark PRIVATE benchmark::benchmark)
+set_target_properties(benchmark PROPERTIES 
+    RUNTIME_OUTPUT_DIRECTORY ${BIN_DIR}
+)

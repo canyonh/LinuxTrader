@@ -47,7 +47,3 @@ conan install .. --output-folder=${CMAKE_BUILD_TYPE} --build=missing --profile=.
 popd
 
 ln -sf ${BUILD_ROOT}/${CMAKE_BUILD_TYPE}/compile_commands.json
-
-# link test data
-# @todo download automatically and setup
-(cd $BUILD_ROOT/$CMAKE_BUILD_TYPE && ln -sf ../../data)

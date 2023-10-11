@@ -8,10 +8,12 @@ set(BIN_DIR "${CMAKE_SOURCE_DIR}/bin/${CMAKE_BUILD_TYPE}")
 add_subdirectory(unit_test)
 add_subdirectory(benchmark)
 
+# linking data used for unit test and bench mark
 add_custom_target(copy_data_files
-    COMMAND ${CMAKE_COMMAND} -E copy_directory "${CMAKE_SOURCE_DIR}/data" "${BIN_DIR}/data"
-    COMMMENT "Copying data files top ${BIN_DIR}/data"
+    COMMAND ${CMAKE_COMMAND} -E create_symlink "${CMAKE_SOURCE_DIR}/data" "${BIN_DIR}/data"
+    COMMENT "Copying data files top ${BIN_DIR}/data"
 )
 
-add_dependencies(copy_data_files unit_test benchmark)
+add_dependencies(unit_test copy_data_files)
+add_dependencies(benchmark copy_data_files)
 

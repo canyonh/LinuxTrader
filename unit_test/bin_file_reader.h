@@ -6,12 +6,7 @@
 
 namespace UnitTest
 {
-    struct Record
-    {
-        std::vector<char> payload;
-    };
-
-    void LoadRecord(const char* file_name_in, std::vector<Record>& records_out);
+    bool ReadItchDump(const char* file_name_in);
 };
 
 #endif

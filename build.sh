@@ -43,7 +43,7 @@ pushd .
 cd ${BUILD_ROOT}
 
 conan install .. --output-folder=${CMAKE_BUILD_TYPE} --build=missing --profile=../${CONAN_PROFILE_PATH}
-(cd ${CMAKE_BUILD_TYPE} && cmake ../.. -DCMAKE_EXPORT_COMPILE_COMMANDS=on -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE} && make -j`nproc`)
+(cd ${CMAKE_BUILD_TYPE} && cmake ../.. -DCMAKE_EXPORT_COMPILE_COMMANDS=on -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE} -DCMAKE_VERBOSE_MAKEFILE=ON && make VERBOSE=1 -j`nproc`)
 popd
 
 ln -sf ${BUILD_ROOT}/${CMAKE_BUILD_TYPE}/compile_commands.json

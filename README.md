@@ -1,2 +1,3 @@
 # LinuxTrader
-High Frequency Trader on Linux
+
+This is my attempt to learn high frequency trading programming.

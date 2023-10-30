@@ -1,5 +1,5 @@
 # Purpose of this repository
-* This repo is all about diving into and playing around with different parts of high-frequency trading systems, like the exchange, order book, and other juicy bits.
+* This repo is all about diving into and playing around with different parts of high-frequency trading systems, like the exchange, order book, and other intersting bits.
 * It is still in very early stage.
 # Getting Started
 * System requirement:
